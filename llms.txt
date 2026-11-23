@@ -6,6 +6,12 @@
 - [Cardápio completo com preços](https://restaurantetroppo.github.io/#cardapio): todos os itens, descrições e preços em reais, por categoria. Os dados também estão em JSON-LD (schema.org Restaurant + Menu) na mesma página.
 - [Privacidade e termos](https://restaurantetroppo.github.io/privacidade.html)
 
+## Horário de funcionamento
+- Segunda a quinta: 17h às 23h
+- Sexta: 17h à meia-noite
+- Sábado: 11h à meia-noite
+- Domingo: 11h às 23h
+
 ## Contato
 - WhatsApp: https://api.whatsapp.com/message/UCZYSCZOA6SWO1
 - Localização no mapa: https://share.google/eFdTSfcbcVSOWLBKY
