@@ -1,4 +1,4 @@
-# Restaurante Troppo
+# Restaurante Troppo (Serrinha-BA)
 
 > Restaurante com pratos no forno e na chapa (servem 2 pessoas), executivos individuais, massas, lasanhas, pizzas, calzones, pastéis, petiscos, saladas, drinks, cervejas e vinhos. Atendimento e reservas pelo WhatsApp.
 
@@ -13,6 +13,8 @@
 - Domingo: 11h às 23h
 
 ## Contato
+- Endereço: Tv. Astrogilda Guimarães, 35 - Ginásio, Serrinha - BA, 48700-000
+- Telefone: (75) 99152-6565
 - WhatsApp: https://api.whatsapp.com/message/UCZYSCZOA6SWO1
 - Localização no mapa: https://share.google/eFdTSfcbcVSOWLBKY
 - Instagram: https://www.instagram.com/restaurantetroppo
