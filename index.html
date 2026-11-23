@@ -78,18 +78,22 @@ a{color:inherit}
 .lk.pri .lk-i{background:oklch(1 0 0 / .14);color:var(--mus)}.lk.pri small{color:oklch(0.95 0.02 70 / .8)}
 
 /* Horário */
-.hours{max-width:560px;margin:28px auto 0;padding:0 16px}
-.hours-h{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:2px 12px;margin-bottom:8px}
-.hours h2{font:700 20px/1.2 Montserrat,sans-serif;margin:0}
-.now{margin:0;font-size:14px;font-weight:600;color:var(--mute);display:flex;align-items:center;gap:8px;min-height:20px}
-.now::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor;flex:none}
+.hours{max-width:560px;margin:26px auto 0;padding:0 16px}
+.hours h2{display:flex;align-items:center;gap:12px;font:700 18px/1.2 Montserrat,sans-serif;margin:0 0 10px}
+.hours h2::after{content:"";flex:1;height:1px;background:var(--line)}
+.hcard{background:var(--surf);border:1px solid var(--line);border-radius:var(--r);padding:6px}
+.hgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.hgrid li{display:grid;justify-items:center;gap:2px;padding:12px 6px;text-align:center}
+.hgrid li:nth-child(odd){border-right:1px solid var(--line)}
+.hgrid li:nth-child(-n+2){border-bottom:1px solid var(--line)}
+.lab{font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.hgrid li.hoje .lab{color:var(--price)}
+.t{display:flex;align-items:baseline;gap:6px;font-size:24px;font-weight:700;line-height:1.15;font-variant-numeric:tabular-nums;white-space:nowrap}
+.dash{color:var(--terra);font-weight:500}
+.now{display:flex;justify-content:center;align-items:center;gap:8px;margin:0 6px;padding:9px 0 7px;border-top:1px solid var(--line);font-size:14px;color:var(--mute)}
+.now::before{content:"";width:8px;height:8px;border-radius:50%;background:oklch(0.6 0.03 50);flex:none}
+.now.open::before{background:oklch(0.62 0.15 150)}
 .now:empty{display:none}
-.now.open{color:var(--price)}
-.days{background:var(--surf);border:1px solid var(--line);border-radius:var(--r);padding:6px 16px}
-.days li{display:grid;grid-template-columns:1fr auto auto auto;gap:8px;align-items:baseline;padding:9px 0;border-bottom:1px dashed var(--line);font-variant-numeric:tabular-nums}
-.days li:last-child{border-bottom:0}
-.days .dia{font-weight:500}.days time{white-space:nowrap;text-align:right}.days .sep{color:var(--mute);font-size:14px}
-.days li.hoje{font-weight:700}.days li.hoje .dia::after{content:" · hoje";font-weight:500;color:var(--price);font-size:14px}
 
 /* Cardápio */
 .menu{max-width:760px;margin:0 auto;padding:44px 16px 24px}
@@ -154,15 +158,11 @@ footer p{margin:6px 0;font-size:13.5px;color:oklch(0.85 0.02 70 / .8)}
   .cat-h h3{font-size:30px}
 }
 @media(min-width:900px){
-  .hours{max-width:1120px;padding:0 24px;margin-top:36px}
-  .days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));padding:6px}
-  .days li{grid-template-columns:1fr;gap:2px;text-align:center;border:0;border-radius:calc(var(--r) - 6px);padding:12px 6px}
-  .days li+li{border-left:1px dashed var(--line);border-radius:0}
-  .days time{text-align:center}.days .sep{display:none}
-  .days li time+span+time::before{content:"às ";color:var(--mute);font-weight:400;font-size:14px}
-  .days li.hoje{background:var(--surf2);border-radius:calc(var(--r) - 6px);border-left-color:transparent}
-  .days li.hoje+li{border-left-color:transparent}
-  .days li.hoje .dia::after{content:"Hoje";display:block;font-size:12.5px}
+  .hours{max-width:1120px;padding:0 24px;margin-top:34px}
+  .hgrid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .hgrid li{border:0!important}
+  .hgrid li+li{border-left:1px solid var(--line)!important}
+  .t{font-size:28px}
 }
 @media(min-width:1100px){
   .links{grid-template-columns:repeat(4,minmax(0,1fr))}
@@ -189,11 +189,11 @@ footer p{margin:6px 0;font-size:13.5px;color:oklch(0.85 0.02 70 / .8)}
 <nav class="links" aria-label="Links do Troppo"><a class="lk pri" href="#cardapio" data-track="cardapio_click"><span class="lk-i"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v7.5M4.5 3v5a2.5 2.5 0 0 0 5 0V3M7 10.5V21"/><path d="M18.5 15V3c-2.2 1.2-3.5 4-3.5 7.5 0 2.5 1.3 4.5 3.5 4.5zM18.5 15v6"/></svg></span><span class="lk-t"><b>Ver o cardápio</b></span></a><a class="lk" href="https://api.whatsapp.com/message/UCZYSCZOA6SWO1" target="_blank" rel="noopener noreferrer" data-track="whatsapp_click"><span class="lk-i"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l1.3-4A8 8 0 1 1 8.4 19z"/><path d="M9 9.5c.3 2 2.5 4.3 4.6 4.6l1.1-1.2 1.8.9c-.3 1-1.2 1.7-2.2 1.6C11 15 8.9 12.9 8.6 9.6 8.5 8.6 9.2 7.7 10.2 7.4l.9 1.8z"/></svg></span><span class="lk-t"><b>Falar no WhatsApp</b><small>Reservas, dúvidas e pedidos</small></span><svg class="ic go" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></a><a class="lk" href="https://share.google/eFdTSfcbcVSOWLBKY" target="_blank" rel="noopener noreferrer" data-track="mapa_click"><span class="lk-i"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg></span><span class="lk-t"><b>Como chegar</b><small>Abrir a localização no mapa</small></span><svg class="ic go" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></a><a class="lk" href="https://www.instagram.com/restaurantetroppo" target="_blank" rel="noopener noreferrer" data-track="instagram_click"><span class="lk-i"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="16.8" cy="7.2" r=".6"/></svg></span><span class="lk-t"><b>Instagram</b><small>@restaurantetroppo</small></span><svg class="ic go" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></a></nav>
 
 <section class="hours" aria-labelledby="h-horario">
-  <div class="hours-h">
-    <h2 id="h-horario">Horário de funcionamento</h2>
+  <h2 id="h-horario">Horário de funcionamento</h2>
+  <div class="hcard">
+    <ul class="hgrid"><li data-days="0,1,2,3" data-o="17:00" data-c="23:00"><span class="lab">Segunda a quinta</span><span class="t"><time datetime="17:00">17h</time><span class="dash" aria-label="às">–</span><time datetime="23:00">23h</time></span></li><li data-days="4" data-o="17:00" data-c="00:00"><span class="lab">Sexta</span><span class="t"><time datetime="17:00">17h</time><span class="dash" aria-label="às">–</span><time datetime="00:00">0h</time></span></li><li data-days="5" data-o="11:00" data-c="00:00"><span class="lab">Sábado</span><span class="t"><time datetime="11:00">11h</time><span class="dash" aria-label="às">–</span><time datetime="00:00">0h</time></span></li><li data-days="6" data-o="11:00" data-c="23:00"><span class="lab">Domingo</span><span class="t"><time datetime="11:00">11h</time><span class="dash" aria-label="às">–</span><time datetime="23:00">23h</time></span></li></ul>
     <p class="now" id="now" aria-live="polite"></p>
   </div>
-  <ul class="days"><li data-d="0" data-o="17:00" data-c="23:00"><span class="dia">Segunda</span><time datetime="17:00">17h</time><span class="sep" aria-hidden="true">às</span><time datetime="23:00">23h</time></li><li data-d="1" data-o="17:00" data-c="23:00"><span class="dia">Terça</span><time datetime="17:00">17h</time><span class="sep" aria-hidden="true">às</span><time datetime="23:00">23h</time></li><li data-d="2" data-o="17:00" data-c="23:00"><span class="dia">Quarta</span><time datetime="17:00">17h</time><span class="sep" aria-hidden="true">às</span><time datetime="23:00">23h</time></li><li data-d="3" data-o="17:00" data-c="23:00"><span class="dia">Quinta</span><time datetime="17:00">17h</time><span class="sep" aria-hidden="true">às</span><time datetime="23:00">23h</time></li><li data-d="4" data-o="17:00" data-c="00:00"><span class="dia">Sexta</span><time datetime="17:00">17h</time><span class="sep" aria-hidden="true">às</span><time datetime="00:00">meia-noite</time></li><li data-d="5" data-o="11:00" data-c="00:00"><span class="dia">Sábado</span><time datetime="11:00">11h</time><span class="sep" aria-hidden="true">às</span><time datetime="00:00">meia-noite</time></li><li data-d="6" data-o="11:00" data-c="23:00"><span class="dia">Domingo</span><time datetime="11:00">11h</time><span class="sep" aria-hidden="true">às</span><time datetime="23:00">23h</time></li></ul>
 </section>
 
 <main class="menu" id="cardapio">
@@ -290,18 +290,20 @@ footer p{margin:6px 0;font-size:13.5px;color:oklch(0.85 0.02 70 / .8)}
     const g = t => parts.find(p => p.type === t).value;
     const wd = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].indexOf(g('weekday'));
     const mins = (+g('hour')) * 60 + (+g('minute'));
-    const days = $$('.days li');
+    const groups = $$('.hgrid li');
+    const byDay = d => groups.find(li => li.dataset.days.split(',').includes(String(d)));
     const toM = t => { const [h, m] = t.split(':').map(Number); return h * 60 + m; };
-    const span = i => { const li = days[i]; const o = toM(li.dataset.o); let c = toM(li.dataset.c); if (c <= o) c += 1440; return [o, c]; };
+    const span = d => { const li = byDay(d); const o = toM(li.dataset.o); let c = toM(li.dataset.c); if (c <= o) c += 1440; return [o, c, li]; };
     const lbl = t => t === '00:00' ? 'meia-noite' : t.replace(/^0/, '').replace(':00', 'h').replace(':', 'h');
-    days[wd].classList.add('hoje');
+    const [o, c, li] = span(wd);
+    li.classList.add('hoje');
     const now = $('#now');
-    const [o, c] = span(wd);
-    const prev = (wd + 6) % 7, [po, pc] = span(prev);
-    if (mins >= o && mins < c) { now.textContent = 'Aberto agora, até ' + lbl(days[wd].dataset.c); now.className = 'now open'; }
-    else if (pc > 1440 && mins < pc - 1440) { now.textContent = 'Aberto agora, até ' + lbl(days[prev].dataset.c); now.className = 'now open'; }
-    else if (mins < o) { now.textContent = 'Fechado agora, abre hoje às ' + lbl(days[wd].dataset.o); }
-    else { const n = (wd + 1) % 7; now.textContent = 'Fechado agora, abre amanhã às ' + lbl(days[n].dataset.o); }
+    const prev = (wd + 6) % 7, [, pc, pli] = span(prev);
+    const open = t => { now.textContent = 'Aberto agora · até ' + lbl(t); now.className = 'now open'; };
+    if (mins >= o && mins < c) open(li.dataset.c);
+    else if (pc > 1440 && mins < pc - 1440) open(pli.dataset.c);
+    else if (mins < o) now.textContent = 'Fechado agora · abre hoje às ' + lbl(li.dataset.o);
+    else now.textContent = 'Fechado agora · abre amanhã às ' + lbl(span((wd + 1) % 7)[2].dataset.o);
   } catch (e) {}
 }
 </script>
