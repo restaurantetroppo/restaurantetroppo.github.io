@@ -1,0 +1,20 @@
+# Restaurante Troppo
+
+> Restaurante com pratos no forno e na chapa (servem 2 pessoas), executivos individuais, massas, lasanhas, pizzas, calzones, pastéis, petiscos, saladas, drinks, cervejas e vinhos. Atendimento e reservas pelo WhatsApp.
+
+## Páginas
+- [Cardápio completo com preços](https://restaurantetroppo.github.io/#cardapio): todos os itens, descrições e preços em reais, por categoria. Os dados também estão em JSON-LD (schema.org Restaurant + Menu) na mesma página.
+- [Privacidade e termos](https://restaurantetroppo.github.io/privacidade.html)
+
+## Contato
+- WhatsApp: https://api.whatsapp.com/message/UCZYSCZOA6SWO1
+- Localização no mapa: https://share.google/eFdTSfcbcVSOWLBKY
+- Instagram: https://www.instagram.com/restaurantetroppo
+
+## Resumo de preços
+- Forno e chapa (2 pessoas): R$ 115 a R$ 155
+- Executivos (individual): R$ 60 a R$ 75
+- Massas (2 pessoas): R$ 52 a R$ 140
+- Pizzas: pequena a partir de R$ 43, grande até R$ 100
+- Petiscos: R$ 17 a R$ 120
+- Drinks: R$ 20 a R$ 38; cervejas 600 ml de R$ 12 a R$ 20
